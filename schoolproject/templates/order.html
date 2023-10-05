@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+{% endblock %}
+{% block content %}
+
+<form action ='order' method="post">
+    {% csrf_token %}
+    <input type="text" name ="name" placeholder="Enter your name"><br>
+    <input type="date" name ="dob" placeholder="Enter date of Birth"><br>
+    <input type="int" name ="age" placeholder="Enter age"><br>
+    <input type="text" name ="gender" placeholder="Gender"><br>
+    <input type="email" name ="email" placeholder="Enter email id"><br>
+    <input type="text" name ="address" placeholder="Enter address"><br>
+
+    <b>Materials Provided</b> <br>
+    <input type="checkbox" name="pen" value="no">Pen <br>
+    <input type="checkbox" name="notebook" value="no">Notebook <br>
+    <input type="checkbox" name="exampaper" value="no">Exam Paper <br>
+
+    <a class="btn btn-success" href="confirm">Submit</a> &nbsp;&nbsp;
+    <a class="btn btn-danger" href="logout">Logout</a>
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor%}
+{% endblock %}
+</body>
+</html>

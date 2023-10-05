@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+{% endblock %}
+{% block content %}
+<form action="login" method="post">
+  {% csrf_token%}
+  <input type="text" name="username" placeholder="enter username"><br>
+  <input type="password" name="password" placeholder="enter password"><br>
+  <input type="submit">
+  &nbsp;&nbsp;
+  <a href="register"> REGISTER</a>
+    <br>
+{% for msg in messages %}
+<b>{{msg}}</b>
+{% endfor%}
+  {% endblock %}
+
+
+</form>
+</body>
+</html>
